@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "node_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "description": "An updated abstract.",
+                        "public": true,
+                        "tags": [
+                            "cancer biology",
+                            "reproducibility"
+                        ]
+                    },
+                    "id": "{node_id}",
+                    "type": "nodes"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "wiki_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "name": "Examination of non-newtonian fluids"
+                    },
+                    "id": "{wiki_id}",
+                    "type": "wikis"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

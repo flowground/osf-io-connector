@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "style_id": {
+            "required": true,
+            "type": "string"
+        },
+        "preprint_id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

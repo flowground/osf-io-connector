@@ -1,0 +1,211 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "full_name": "Casey M. Rollins",
+                        "middle_names": "Marie",
+                        "social": {
+                            "github": [
+                                "caseyrollins"
+                            ]
+                        }
+                    },
+                    "id": "{user_id}",
+                    "type": "users"
+                }
+            },
+            "properties": {
+                "attributes": {
+                    "description": "The properties of the user entity.",
+                    "properties": {
+                        "active": {
+                            "description": "Whether or not the user is an active user.",
+                            "readOnly": true,
+                            "type": "boolean"
+                        },
+                        "date_registered": {
+                            "description": "The time at which the user registered their account, as an iso8601 formatted timestamp.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "family_name": {
+                            "description": "The family name of the user, used for bibliographic citations.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "full_name": {
+                            "description": "The full name of the user, used for display on the OSF.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "given_name": {
+                            "description": "The given name of the user, used for bibliographic citations.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "locale": {
+                            "description": "The user's locale, e.g. 'en_US'.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "middle_names": {
+                            "description": "The middle names of the user, used for bibliographic citations.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "social": {
+                            "description": "The social fields associated with a user.",
+                            "properties": {
+                                "academiaProfileID": {
+                                    "description": "The academiaProfileID for the given user.",
+                                    "type": "string"
+                                },
+                                "baiduScholar": {
+                                    "description": "The baiduScholar for the given user.",
+                                    "type": "string"
+                                },
+                                "github": {
+                                    "description": "The github usernames for the given user.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "impactStory": {
+                                    "description": "The impactStory for the given user.",
+                                    "type": "string"
+                                },
+                                "linkedIn": {
+                                    "description": "The linkedIn profiles for the given user.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "orcid": {
+                                    "description": "The orcid for the given user.",
+                                    "type": "string"
+                                },
+                                "profileWebsites": {
+                                    "description": "The profileWebsites for the given user.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "researchGate": {
+                                    "description": "The researchGate for the given user.",
+                                    "type": "string"
+                                },
+                                "researcherId": {
+                                    "description": "The researcherId for the given user.",
+                                    "type": "string"
+                                },
+                                "scholar": {
+                                    "description": "The google scholar for the given user.",
+                                    "type": "string"
+                                },
+                                "ssrn": {
+                                    "description": "The ssrn for the given user.",
+                                    "type": "string"
+                                },
+                                "twitter": {
+                                    "description": "The twitter handles for the given user.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "readOnly": false,
+                            "type": "object"
+                        },
+                        "suffix": {
+                            "description": "The suffix of the user, used for bibliographic citations.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "timezone": {
+                            "description": "The user's timezone, e.g. 'Etc/UTC'.",
+                            "readOnly": false,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": false,
+                    "required": [
+                        "active",
+                        "date_registered",
+                        "full_name"
+                    ],
+                    "title": "Attributes",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "The unique identifier of the user entity.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "links": {
+                    "description": "URLs to alternative representations of the user entity.",
+                    "properties": {
+                        "html": {
+                            "description": "A link to the user's profile page on the OSF.",
+                            "format": "URL",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "profile_image": {
+                            "description": "A link to the user's profile image.",
+                            "format": "URL",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": true,
+                    "title": "Links",
+                    "type": "object"
+                },
+                "relationships": {
+                    "description": "URLs to other entities or entity collections that have a relationship to the user entity.",
+                    "properties": {
+                        "institutions": {
+                            "description": "A link to the list of institutions the user is affiliated with.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "nodes": {
+                            "description": "A link to the list of nodes the user is a contributor to.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": true,
+                    "title": "Relationships",
+                    "type": "object"
+                },
+                "type": {
+                    "description": "The type identifier of the user entity (`users`).",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "attributes",
+                "relationships",
+                "links"
+            ],
+            "title": "User",
+            "type": "object"
+        }
+    }
+}

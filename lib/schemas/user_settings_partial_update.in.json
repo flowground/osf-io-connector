@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "subscribe_osf_general_email": true,
+                        "subscribe_osf_help_email": false,
+                        "two_factor_enabled": true,
+                        "two_factor_verification": 123456
+                    },
+                    "id": "{user_id}",
+                    "type": "users"
+                }
+            },
+            "properties": {
+                "attributes": {
+                    "description": "The properties of the user settings",
+                    "properties": {
+                        "subscribe_osf_general_email": {
+                            "description": "Whether you are subscribed to general OSF notifications.",
+                            "readOnly": false,
+                            "type": "boolean"
+                        },
+                        "subscribe_osf_help_email": {
+                            "description": "Whether you are subscribed to tips on how to make the most of the OSF.",
+                            "readOnly": false,
+                            "type": "boolean"
+                        },
+                        "two_factor_enabled": {
+                            "description": "Whether or not two-factor authentication has been enabled.",
+                            "readOnly": false,
+                            "type": "boolean"
+                        },
+                        "two_factor_verification": {
+                            "description": "Write only, enter 6 six-digit verification code.  two_factor_enabled must be set to true.",
+                            "readOnly": false,
+                            "type": "integer"
+                        }
+                    },
+                    "readOnly": false,
+                    "title": "Attributes",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "The unique identifier of the logged in user",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type identifier of the draft registration entity (`user-settings`).",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "attributes"
+            ],
+            "title": "User Settings",
+            "type": "object"
+        }
+    }
+}

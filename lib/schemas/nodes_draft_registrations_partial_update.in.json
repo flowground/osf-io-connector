@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "node_id": {
+            "required": true,
+            "type": "string"
+        },
+        "draft_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "registration_metadata": {
+                            "comments": {
+                                "value": "This is my first registration."
+                            },
+                            "datacompletion": {
+                                "value": "No, data collection has not begun"
+                            },
+                            "looked": {
+                                "value": "No"
+                            }
+                        }
+                    },
+                    "id": "{draft_registration_id}",
+                    "type": "draft_registrations"
+                }
+            },
+            "properties": {
+                "attributes": {
+                    "description": "The properties of the draft registration entity.",
+                    "properties": {
+                        "registration_metadata": {
+                            "description": "A dictionary of question IDs and responses from the registration schema.",
+                            "readOnly": false,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": false,
+                    "title": "Attributes",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "The unique identifier of the draft registration entity.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type identifier of the draft registration entity (`draft_registrations`).",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "attributes"
+            ],
+            "title": "Draft Registration Detail",
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,157 @@
+{
+    "type": "object",
+    "properties": {
+        "node_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "content": "Your wiki content goes here.",
+                        "name": "A brand new wiki page"
+                    },
+                    "type": "wikis"
+                }
+            },
+            "properties": {
+                "attributes": {
+                    "description": "The properties of the wiki.",
+                    "properties": {
+                        "content_type": {
+                            "description": "Content type of the wiki (`text/markdown`).",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "current_user_can_comment": {
+                            "description": "Whether the current user is allowed to post comments on this wiki.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "date_modified": {
+                            "description": "The date and time at which the wiki was last modified, as an iso8601 formatted timestamp.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "extra": {
+                            "description": "A dictionary containing additional metadata about this wiki, including version information.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "kind": {
+                            "description": "The type of object.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "materialized_path": {
+                            "description": "Materialized path to the wiki object.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "The name/title of the wiki page.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "path": {
+                            "description": "Path to the wiki object.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "size": {
+                            "description": "Size of the wiki.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": false,
+                    "required": [
+                        "kind",
+                        "name",
+                        "date_modified",
+                        "extra",
+                        "content_type",
+                        "path",
+                        "current_user_can_comment",
+                        "materialized_path",
+                        "size"
+                    ],
+                    "title": "Attributes",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "The identifier of the wiki.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "links": {
+                    "description": "URLs to alternative representations of the wiki.",
+                    "properties": {
+                        "download": {
+                            "description": "The URL to download the content of the wiki.",
+                            "format": "URL",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "info": {
+                            "description": "A link to the detail page for the wiki.",
+                            "format": "URL",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "self": {
+                            "description": "A link to the detail page for the wiki.",
+                            "format": "URL",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": true,
+                    "title": "Links",
+                    "type": "object"
+                },
+                "relationships": {
+                    "description": "URLs to other entities or entity collections that have a relationship to the wiki.",
+                    "properties": {
+                        "comments": {
+                            "description": "A relationship to the comments related to this wiki.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "node": {
+                            "description": "A relationship to the associated node.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "user": {
+                            "description": "A relationship to the user associated with this wiki.",
+                            "readOnly": false,
+                            "type": "string"
+                        },
+                        "versions": {
+                            "description": "A relationship to the versions related to this wiki.",
+                            "readOnly": false,
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": false,
+                    "title": "Relationships",
+                    "type": "object"
+                },
+                "type": {
+                    "description": "The type identifier of the wiki (`wikis`).",
+                    "readOnly": false,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "relationships"
+            ],
+            "title": "Wiki",
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "comment_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "content": "changed comment content"
+                    },
+                    "id": "{comment_id}",
+                    "type": "comments"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

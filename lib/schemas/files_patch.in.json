@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "file_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "name": "new file name.jpg"
+                    },
+                    "id": "{file_id}",
+                    "type": "files"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

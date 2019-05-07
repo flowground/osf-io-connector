@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "type": "string"
+        },
+        "provider": {
+            "required": true,
+            "type": "string"
+        },
+        "account_id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "preprint_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "doi": "{doi}",
+                        "is_published": true,
+                        "subjects": [
+                            [
+                                "<subject_id>"
+                            ]
+                        ]
+                    },
+                    "id": "{preprint_id}",
+                    "relationships": {
+                        "node": {
+                            "data": {
+                                "id": "{node_id}",
+                                "type": "nodes"
+                            }
+                        },
+                        "primary_file": {
+                            "data": {
+                                "id": "{file_id}",
+                                "type": "primary_files"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        }
+    }
+}

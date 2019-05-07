@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "registration_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "example": {
+                "data": {
+                    "attributes": {
+                        "pending_withdrawal": true,
+                        "withdrawal_justification": "Methods found to be problematic."
+                    },
+                    "id": "{registration_id}",
+                    "type": "registrations"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
